@@ -1,0 +1,28 @@
+version: '3'
+services:
+  db:
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456o
+    image: mysql
+    volumes:
+      - ./db:/var/lib/mysql
+  admin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: db
+    depends_on:
+      - db
+    ports:
+      - 80
+  wordpress:
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_PASSWORD: 123456o
+    image: wordpress
+    depends_on:
+      - db
+    ports:
+      - 80
+    volumes:
+      - ./wp:/var/www/html
+      - ./theme:/var/www/html/wp-content/themes/benzishe

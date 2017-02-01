@@ -1,0 +1,13 @@
+/*
+Theme Name: 本子社主题
+Theme URI: www.benzishe.com
+Description: 本子社专属主题
+Version: 0.0.1
+Author: toy
+*/
+body{
+	margin: 0;font-family: "Microsoft YaHei",Arial,Helvetica,sans-serifsans-serif;
+}
+a{
+	color:inherit;text-decoration: none
+}
